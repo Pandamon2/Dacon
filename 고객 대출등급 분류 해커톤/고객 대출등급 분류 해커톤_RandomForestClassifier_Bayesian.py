@@ -211,4 +211,4 @@ submission = pd.DataFrame({'ID': test_id, '대출등급': y_test_pred})
 print(submission)
 
 # 예측 결과를 CSV 파일로 저장
-# submission.to_csv('submission_RandomForestClassifier_bayesian_optimization.csv', index=False, encoding = 'utf-8-sig')
+submission.to_csv('submission_RandomForestClassifier_bayesian_optimization.csv', index=False, encoding = 'utf-8-sig')
