@@ -6,7 +6,6 @@ from sklearn.metrics import mean_absolute_error
 
 train_df = pd.read_csv("C:/Users/lime/OneDrive/바탕 화면/open/train.csv")
 submission_df = pd.read_csv("C:/Users/lime/OneDrive/바탕 화면/open/sample_submission.csv")
-test = pd.read_csv("C:/Users/lime/OneDrive/바탕 화면/open/23년 평균기온 데이터.csv", encoding = 'euc-kr')
 
 # 일조합 null값 고려
 train_df = train_df[train_df['일시'] >= '1973-04-16']
@@ -35,9 +34,3 @@ submission_df['평균기온'] = forecast_data.yhat[-358:].values
 submission_df
 
 submission_df_4 = submission_df[submission_df['일시'] < '2023-05-01']
-test_4 = test[test['일시'] < '2023-05-01']
-
-mae_4 = mean_absolute_error(submission_df_4['평균기온'], test_4['평균기온'])
-mae_12 = mean_absolute_error(submission_df['평균기온'], test['평균기온'])
-print(mae_4)
-print(mae_12)
